@@ -37,4 +37,10 @@ public class Ejemplo3 {
         }
         return numeroMasGrande;
     }
+
+    /*public static void main(String[] args) {
+        Ejemplo3 ejemplo3 = new Ejemplo3(new int[]{5,6,1,4,12,1});
+        System.out.println(ejemplo3.obtenerMayorValor2());
+    }*/
+
 }
