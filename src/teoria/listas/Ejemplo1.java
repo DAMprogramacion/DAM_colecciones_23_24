@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Ejemplo1 {
     public static void main(String[] args) {
+        //creando una lista vacía
         List<String> listaCiudades = new ArrayList<>();
         listaCiudades.add("Madrid");
         listaCiudades.add("Paris");
