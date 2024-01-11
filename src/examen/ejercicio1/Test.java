@@ -28,5 +28,50 @@ public class Test {
         biblioteca.adquirirLibro(libro3);
         System.out.println("-------------------------");
         System.out.println(biblioteca);
+        System.out.println("-------------------------");
+        isbn = "0123456789";
+        System.out.printf("Borrando libro con ISBN %s: %B%n",
+                isbn, biblioteca.borrarLibroPorISBN(isbn)); //true
+        isbn = "0123456789";
+        System.out.printf("Borrando libro con ISBN %s: %B%n",
+                isbn, biblioteca.borrarLibroPorISBN(isbn)); //false
+        System.out.println(biblioteca);
+        System.out.println("-------------------------");
+        isbn = "0123456782";
+        Libro libroPorISBN1 =  biblioteca.obtenerLibroPorISBN(isbn);
+        if (libroPorISBN1 != null)
+            System.out.printf("%s: %s - %s%n",
+                isbn, libroPorISBN1.titulo(), libroPorISBN1.autor());
+        isbn = "0123456789";
+        Libro libroPorISBN2 =  biblioteca.obtenerLibroPorISBN(isbn);
+        if (libroPorISBN2 != null)
+            System.out.printf("%s: %s - %s%n",
+                isbn, libroPorISBN2.titulo(), libroPorISBN2.autor());
+        isbn = "0123456781";
+        System.out.printf("Borrando libro con ISBN %s: %B%n",
+                isbn, biblioteca.borrarLibroPorISBN(isbn));
+        System.out.println("---------LITERATURA----------------");
+        Tematica tem1 = Tematica.LITERATURA;
+        System.out.println(biblioteca.obtenerLibrosPorTematcia(tem1));
+        System.out.println("---------CIENCICAS----------------");
+        Tematica tem2 = Tematica.CIENCIAS;
+        System.out.println(biblioteca.obtenerLibrosPorTematcia(tem2));
+        System.out.println("---------TECNOLOGIA----------------");
+        Tematica tem3 = Tematica.TECNOLOGIA;
+        System.out.println(biblioteca.obtenerLibrosPorTematcia(tem3));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
