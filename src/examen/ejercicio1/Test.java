@@ -59,7 +59,13 @@ public class Test {
         System.out.println("---------TECNOLOGIA----------------");
         Tematica tem3 = Tematica.TECNOLOGIA;
         System.out.println(biblioteca.obtenerLibrosPorTematcia(tem3));
-
+        Libro libro4 = new Libro("Sistemas Operativos", "Tanembaun",
+                Tematica.TECNOLOGIA, "8423456780");
+        biblioteca.adquirirLibro(libro4);
+        Libro libro5 = new Libro("Guerra y Paz", "Tolstoi",
+                Tematica.LITERATURA, "8423456781");
+        biblioteca.adquirirLibro(libro5);
+        System.out.println(biblioteca);
 
 
 
