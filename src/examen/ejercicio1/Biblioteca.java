@@ -41,7 +41,7 @@ public class Biblioteca {
         }
         return null;
     }
-    public List<Libro> obtenerLibrosPorTematcia(Tematica tematica) {
+    public List<Libro> obtenerLibrosPorTematica(Tematica tematica) {
         List<Libro> librosPorTematica = new ArrayList<>();
         for (Libro libro : libros) {
             if (libro.tematica().equals(tematica))
@@ -49,7 +49,14 @@ public class Biblioteca {
         }
         return librosPorTematica;
     }
+   public List<Libro> obtenerLibrosCastellano() {
+        List<Libro> librosCastellanos = new ArrayList<>();
+        for (Libro libro : libros)
+            if (libro.isbn().startsWith("84"))
+                librosCastellanos.add(libro);
 
+        return librosCastellanos;
+   }
 
     @Override
     public String toString() {

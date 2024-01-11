@@ -52,13 +52,13 @@ public class Test {
                 isbn, biblioteca.borrarLibroPorISBN(isbn));
         System.out.println("---------LITERATURA----------------");
         Tematica tem1 = Tematica.LITERATURA;
-        System.out.println(biblioteca.obtenerLibrosPorTematcia(tem1));
+        System.out.println(biblioteca.obtenerLibrosPorTematica(tem1));
         System.out.println("---------CIENCICAS----------------");
         Tematica tem2 = Tematica.CIENCIAS;
-        System.out.println(biblioteca.obtenerLibrosPorTematcia(tem2));
+        System.out.println(biblioteca.obtenerLibrosPorTematica(tem2));
         System.out.println("---------TECNOLOGIA----------------");
         Tematica tem3 = Tematica.TECNOLOGIA;
-        System.out.println(biblioteca.obtenerLibrosPorTematcia(tem3));
+        System.out.println(biblioteca.obtenerLibrosPorTematica(tem3));
         Libro libro4 = new Libro("Sistemas Operativos", "Tanembaun",
                 Tematica.TECNOLOGIA, "8423456780");
         biblioteca.adquirirLibro(libro4);
@@ -66,6 +66,12 @@ public class Test {
                 Tematica.LITERATURA, "8423456781");
         biblioteca.adquirirLibro(libro5);
         System.out.println(biblioteca);
+        System.out.println("_________ESPAÑOL_______________");
+        List<Libro> librosCastellano = biblioteca.obtenerLibrosCastellano();
+        for (Libro libroCastellano : librosCastellano)
+            System.out.println(libroCastellano);
+        System.out.println("_________ESPAÑOL_______________");
+        librosCastellano.forEach(System.out::println);
 
 
 
