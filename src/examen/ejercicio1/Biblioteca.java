@@ -2,6 +2,7 @@ package examen.ejercicio1;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Biblioteca {
     private String nombreBiblioteca;
@@ -42,20 +43,27 @@ public class Biblioteca {
         return null;
     }
     public List<Libro> obtenerLibrosPorTematica(Tematica tematica) {
-        List<Libro> librosPorTematica = new ArrayList<>();
+        /*List<Libro> librosPorTematica = new ArrayList<>();
         for (Libro libro : libros) {
             if (libro.tematica().equals(tematica))
                 librosPorTematica.add(libro);
         }
-        return librosPorTematica;
+        return librosPorTematica;*/
+        return  libros.stream()
+                .filter(libro -> libro.tematica().equals(tematica))
+                .collect(Collectors.toList());
     }
    public List<Libro> obtenerLibrosCastellano() {
-        List<Libro> librosCastellanos = new ArrayList<>();
+       /* List<Libro> librosCastellanos = new ArrayList<>();
         for (Libro libro : libros)
             if (libro.isbn().startsWith("84"))
                 librosCastellanos.add(libro);
 
-        return librosCastellanos;
+        return librosCastellanos;*/
+       return  libros.stream()
+               .filter(libro -> libro.isbn().startsWith("84"))
+               .toList();
+
    }
 
     @Override
